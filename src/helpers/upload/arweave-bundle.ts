@@ -549,7 +549,7 @@ export async function* makeArweaveBundleUploadGenerator(
           currentBalance.toNumber() / LAMPORTS
         }. Sending fund txn...`,
       );
-      await bundlr.fund(bufferCost.minus(currentBalance));
+      await bundlr.fund(bufferCost.multipliedBy(2));
       log.info(`Successfully funded Arweave Bundler, starting upload`);
     } else {
       log.info(
